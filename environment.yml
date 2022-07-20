@@ -1,0 +1,37 @@
+# Conda environment specification. The dependencies defined in this file will
+# be automatically provisioned for runs with userManagedDependencies=False.
+
+# Details about the Conda environment file format:
+# https://conda.io/docs/user-guide/tasks/manage-environments.html#create-env-file-manually
+
+name: adult_classification_env
+dependencies:
+  # The python interpreter version.
+  # Currently Azure ML only supports 3.5.2 and later.
+- python=3.6.2
+- scikit-learn
+- matplotlib
+- pandas
+- seaborn
+- ipykernel
+- pip
+- pip:
+  - azureml-defaults
+  - azureml-mlflow
+  - azureml-core
+  - azureml-sdk
+  - azureml-widgets
+  - azureml-dataprep
+  - azureml-dataprep-native
+  - azureml-dataprep-rslex
+  - azureml-dataset-runtime
+  - azureml-telemetry
+  - azureml-pipeline
+  - applicationinsights
+  - imbalanced-learn==0.7.0
+  - imblearn
+  - matplotlib-inline
+  - papermill
+  - numpy
+  - pillow==8.0.0
+  - pyarrow
