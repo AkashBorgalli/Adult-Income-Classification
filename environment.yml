@@ -4,7 +4,7 @@
 # Details about the Conda environment file format:
 # https://conda.io/docs/user-guide/tasks/manage-environments.html#create-env-file-manually
 
-name: adult_classification_env
+name: adult_Income
 dependencies:
   # The python interpreter version.
   # Currently Azure ML only supports 3.5.2 and later.
@@ -27,11 +27,15 @@ dependencies:
   - azureml-dataset-runtime
   - azureml-telemetry
   - azureml-pipeline
+  - azureml-interpret
   - applicationinsights
   - imbalanced-learn==0.7.0
   - imblearn
+  - lightgbm
   - matplotlib-inline
   - papermill
+  - pyqt5-tools
   - numpy
   - pillow==8.0.0
   - pyarrow
+

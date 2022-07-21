@@ -7,7 +7,7 @@ import seaborn as sns
 import matplotlib_inline
 
 # Load the workspace from the saved config file
-ws = Workspace.from_config(path='D:/Adult Classification Project/Adult-Income-Classification/config.json')
+ws = Workspace.from_config()
 print(ws)
 
 # Get the experiment run context

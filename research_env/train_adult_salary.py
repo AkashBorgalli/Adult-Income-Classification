@@ -7,17 +7,29 @@ import joblib
 import os
 from sklearn.model_selection import train_test_split
 import lightgbm as lgb
-from sklearn.metrics import roc_auc_score
+from sklearn.metrics import roc_auc_score,f1_score,accuracy_score,precision_score,recall_score
 from sklearn.metrics import roc_curve
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, plot_confusion_matrix,ConfusionMatrixDisplay
 from sklearn.metrics import precision_score
 from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+import matplotlib_inline
+import seaborn as sns
+from azureml.interpret import ExplanationClient
+from interpret.ext.blackbox import TabularExplainer
+
+labels = ['<=50K', '>50K']
+features = ['age', 'workclass', 'fnlwgt', 'education', 'education-num','marital-status', 'occupation', 'relationship', 'race', 'sex',
+       'capital-gain', 'capital-loss', 'hours-per-week', 'country']
 # Get parameters
 parser = argparse.ArgumentParser()
 parser.add_argument("--training-data", type=str, dest='training_data', help='training data')
 args = parser.parse_args()
 training_data = args.training_data
+print('training data', training_data)
+
+
 
 # Get the experiment run context
 run = Run.get_context()
@@ -25,7 +37,7 @@ run = Run.get_context()
 # load the prepared data file in the training folder
 print("Loading Data for Training...")
 file_path = os.path.join(training_data,'data.csv')
-diabetes = pd.read_csv(file_path)
+df = pd.read_csv(file_path)
 
 # Separate features and labels
 print("Splitting data X and Y...")
@@ -42,7 +54,7 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
-# Train adecision tree model
+# Training a lightGBM model
 print('Training a LightGBM Classifier model...')
 clf = lgb.LGBMClassifier(boosting_type='goss',objective='binary',n_jobs=-1,n_estimators=200)
 clf.fit(X_train, y_train)
@@ -57,10 +69,16 @@ print('Accuracy:', acc)
 run.log('Accuracy', np.float(acc))
 
 # calculate AUC
-y_scores = model.predict_proba(X_test)
+y_scores = clf.predict_proba(X_test)
 auc = roc_auc_score(y_test,y_scores[:,1])
 print('AUC: ' + str(auc))
 run.log('AUC', np.float(auc))
+
+
+# calculate precision
+precisionscore = precision_score(y_test, y_pred)
+print('Precision: ' + str(precisionscore))
+run.log('Precision', precisionscore)
 
 # plot ROC curve
 fpr, tpr, thresholds = roc_curve(y_test, y_scores[:,1])
@@ -80,7 +98,9 @@ fig = plt.figure(figsize=(6,6))
 cm = confusion_matrix(y_test, y_pred )
 plt.title('Heatmap of Confusion Matrix', fontsize = 12)
 sns.heatmap(cm, annot = True ,  fmt = "d")
+##run.log_confusion_matrix(name = "Heatmap of Confusion Matrix", value = cm)
 run.log_image(name='Confusion Matrix LGBM', plot=fig)
+
 
 # Save the trained model in the outputs folder
 print("Saving model...")
@@ -95,6 +115,14 @@ Model.register(workspace=run.experiment.workspace,
                model_name = 'adult_income_model',
                tags={'Training context':'Pipeline'},
                properties={'AUC': np.float(auc), 'Accuracy': np.float(acc), 'Precision': precision_score(y_test, y_pred)})
+
+# Get explanation
+explainer = TabularExplainer(clf, X_train, features=features, classes=labels)
+explanation = explainer.explain_global(X_test)
+
+# Get an Explanation Client and upload the explanation
+explain_client = ExplanationClient.from_run(run)
+explain_client.upload_model_explanation(explanation, comment='Tabular Explanation')
 
 print('Completed the training')
 run.complete()
