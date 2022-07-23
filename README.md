@@ -49,7 +49,7 @@ The dataset provides 14 input variables that are a mixture of categorical, ordin
 - Logs Important Metrics and images on experiment dashboards as well as print in system logs.
 - Shows feature importance.
 - Created ML Pipeline (Datastats --> data pre-processing --> Model Training )
-- Published ML Pipeline for Scheduling to run every week.
+- Published ML Pipeline for Scheduling to run whenever data changes(Reactive Training).
 - Predict Real-time from Azure Container Instance .
 
 
