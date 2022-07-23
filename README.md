@@ -1,4 +1,4 @@
-# Adult Income Machine Learning Classification Project (End to End)
+# Adult Income Machine Learning Classification Project (End to End) on Azure
 
 
 🚩 ***Problem Statement***: \
@@ -60,7 +60,7 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 3. Reduced no.of unique categories of education, maritial-status.\
 4. Converted Salary feature to binary.\
 5. Enforced label-encoding on entire dataset.\
-6. Applied Smoteenn to handle imbalanceness of database.\
+6. Applied Smoteenn to handle imbalanceness of target feature\
 7. Transformed data using StandardScalar.
 
 
@@ -68,7 +68,6 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 ## ✔️ Deployment
 - Used LightGBM Model for Deployment with AUC of 0.92.
 - Deployed the model over Azure Container Instance.
-
 
 
 
