@@ -25,9 +25,7 @@ The dataset provides 14 input variables that are a mixture of categorical, ordin
 - Hours-per-week.
 - Country.
 - Salary(Target Feature)
-## Architecture Diagram
 
-![](images/Architecture%20Diagram.jpg)
 ## 📝 Features
 
 - Maintains snapshot of code.
@@ -65,26 +63,26 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 
 
 ## 💡 Screenshots:
-- Data Stats of an experiment over Azure\
+- **Data Stats of an experiment over Azure**\
 ![](screenshots/Experiment%20DataStats.PNG)
 ![](screenshots/metrics.PNG)
 - Label Distribution logged as image in AML
 ![](screenshots/label%20distribution.PNG)
 
-- Registered Environment
+- **Registered Environment**
 ![](screenshots/env.PNG)
 
-- Pipeline Execution
+- **Pipeline Execution**
 ![](screenshots/adult_classification_pipeline.PNG)
 ![](screenshots/pipeline_overview.PNG)
 ![](screenshots/pipeline_endpoint.PNG)
 ![](screenshots/model_explanation.PNG)
 
-- Registered Model(Light Gradient Boosting Model)
+- **Registered Model(Light Gradient Boosting Model)**
 ![](screenshots/Registered%20Model.PNG)
 
-- Output Execution
-![](screenshots/prep_vscode.PNG)
+- **Output Execution**
+![](screenshots/pred_vscode.PNG)
 ![](screenshots/prediction.PNG)
 
 
