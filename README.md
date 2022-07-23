@@ -67,6 +67,25 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 ## 💡 Screenshots:
 - Data Stats of an experiment over Azure\
 ![](screenshots/Experiment%20DataStats.PNG)
+![](screenshots/metrics.PNG)
+- Label Distribution logged as image in AML
+![](screenshots/label%20distribution.PNG)
+
+- Registered Environment
+![](screenshots/env.PNG)
+
+- Pipeline Execution
+![](screenshots/adult_classification_pipeline.PNG)
+![](screenshots/pipeline_overview.PNG)
+![](screenshots/pipeline_endpoint.PNG)
+![](screenshots/model_explanation.PNG)
+
+- Registered Model(Light Gradient Boosting Model)
+![](screenshots/Registered%20Model.PNG)
+
+- Output Execution
+![](screenshots/prep_vscode.PNG)
+![](screenshots/prediction.PNG)
 
 
 
