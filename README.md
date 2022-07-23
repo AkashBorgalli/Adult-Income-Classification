@@ -65,8 +65,8 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 
 
 ## 💡 Screenshots:
-- Data Stats over Azure\
-![](screenshots/env.PNG)
+- Data Stats of an experiment over Azure\
+![](screenshots/Experiment%20DataStats.PNG)
 
 
 
