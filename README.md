@@ -99,6 +99,10 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 ![](screenshots/prep_data_stats.PNG)
 ![](screenshots/prep_data_log.PNG)
 
+- **Trained Model Confusion Matrix**
+![](screenshots/train.PNG)
+
+
 - **Registered Model(Light Gradient Boosting Model)**
 ![](screenshots/Registered%20Model.PNG)
 
