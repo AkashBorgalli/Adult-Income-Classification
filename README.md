@@ -96,6 +96,10 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 ![](screenshots/pipeline_endpoint.PNG)
 ![](screenshots/model_explanation.PNG)
 
+- **Data Pre-processing Stats and Logs**
+![](screenshots/prep_data_stats.PNG)
+![](screenshots/prep_data_log.PNG)
+
 - **Registered Model(Light Gradient Boosting Model)**
 ![](screenshots/Registered%20Model.PNG)
 
