@@ -1,1 +1,2 @@
 dataset_name : 'salary_classification'
+aci_service_name: 'adult-income-service'
