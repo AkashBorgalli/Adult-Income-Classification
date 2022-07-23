@@ -46,7 +46,7 @@ The dataset provides 14 input variables that are a mixture of categorical, ordin
 ## 📝 Features used from AzureML for this project
 
 - Maintains snapshot of code.
-- Logs Important Metrics and images on experiment dashboards as well as print in system logs .
+- Logs Important Metrics and images on experiment dashboards as well as print in system logs.
 - Shows feature importance.
 - Created ML Pipeline (Datastats --> data pre-processing --> Model Training )
 - Published ML Pipeline for Scheduling to run every week.
@@ -103,7 +103,7 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 - **Registered Model(Light Gradient Boosting Model)**
 ![](screenshots/Registered%20Model.PNG)
 
-- **Output Execution**
+- **Output Execution from Azure Container Instance**
 ![](screenshots/pred_vscode.PNG)
 ![](screenshots/prediction.PNG)
 
