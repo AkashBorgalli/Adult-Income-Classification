@@ -82,6 +82,7 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 - **Data Stats of an experiment over Azure**\
 ![](screenshots/Experiment%20DataStats.PNG)
 ![](screenshots/metrics.PNG)
+![](screenshots/data_stats_metric.PNG)
 
 - **Label Distribution logged as image in AML**
 ![](screenshots/label%20distribution.PNG)
