@@ -38,4 +38,5 @@ dependencies:
   - numpy
   - pillow==8.0.0
   - pyarrow
+  - pyyaml
 

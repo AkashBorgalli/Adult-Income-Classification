@@ -6,9 +6,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib_inline
 
+
 # Load the workspace from the saved config file
 ws = Workspace.from_config()
 print(ws)
+
+
 
 # Get the experiment run context
 run = Run.get_context()

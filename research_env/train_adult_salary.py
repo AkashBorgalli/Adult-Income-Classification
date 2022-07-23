@@ -107,7 +107,6 @@ print("Saving model...")
 os.makedirs('outputs', exist_ok=True)
 model_file = os.path.join('outputs', 'adult_income_model.pkl')
 joblib.dump(value=clf, filename=model_file)
-
 # Register the model
 print('Registering model...')
 Model.register(workspace=run.experiment.workspace,
