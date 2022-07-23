@@ -66,7 +66,7 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 
 
 ## ✔️ Deployment
-- Used LightGBM Model for Deployment with AUC of 0.91.
+- Used LightGBM Model for Deployment with AUC of 0.92.
 - Deployed the model over Azure Container Instance.
 
 
