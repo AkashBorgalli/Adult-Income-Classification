@@ -2,6 +2,23 @@
 
 
 🚩 ***Problem Statement***: \
+The prominent inequality of wealth and income is
+a huge concern especially in the United States. The likelihood
+of diminishing poverty is one valid reason to reduce the world's
+surging level of economic inequality. The principle of universal
+moral equality ensures sustainable development and improve
+the economic stability of a nation. Governments in different
+countries have been trying their best to address this problem and
+provide an optimal solution. The problem of income inequality
+has been of great concern in the recent years. Making the
+poor better off does not seem to be the sole criteria to be in
+quest for eradicating this issue. People of the United States
+believe that the advent of economic inequality is unacceptable
+and demands a fair share of wealth in the society.
+
+
+
+# 🎯***Solution***:
 Building a robust machine learning model that would determine whether census income of an adult would be above 50K or not per year.
 
 
@@ -26,7 +43,7 @@ The dataset provides 14 input variables that are a mixture of categorical, ordin
 - Country.
 - Salary(Target Feature)
 
-## 📝 Features
+## 📝 Features used from AzureML for this project
 
 - Maintains snapshot of code.
 - Logs Important Metrics and images on experiment dashboards as well as print in system logs .
@@ -49,7 +66,7 @@ Steps : 1. Applied Log Transformation over Age and final weight.\
 
 
 ## ✔️ Deployment
-- Used LightGBM Model for Deployment.
+- Used LightGBM Model for Deployment with AUC of 0.91.
 - Deployed the model over Azure Container Instance.
 
 
